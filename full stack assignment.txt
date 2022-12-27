@@ -1,0 +1,198 @@
+Technologies to use: 
+Frontend: React JS
+Backend: Nest JS (preferred much) or Vanilla Node JS.
+Database: MongoDB or PostgreSQL or MySQL
+
+Functionalities to implement:
+Users can Login/Sign up.
+Have public route and private route pages.
+Use Jwt Token-based authentication.
+Store User Details in the database.
+
+code#
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>
+*********************************************************************************************************************
+body {
+    background-color:black;
+    font-family:'Julius Sans One', Arial;
+    color:#33BDFF;
+}
+
+#root{
+    background-color:#212121;
+    border:1px solid lightblue;
+    padding:10px;
+    font-weight:300px;
+}
+
+.header{
+    text-align:center;
+    text-decoration:underline;
+    font-weight:100;
+}
+
+img{
+    width:200px;
+}
+
+input{
+    text-align:center;
+    margin-left:10px;
+    background-color:#292929;
+    color:#33BDFF;
+    /border-radius:15px;/
+    border-bottom:2px solid #33BDFF;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    height:30px;
+    width:100px;
+    font-family:Raleway;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+input:hover{
+    width:200px;
+}
+
+input:focus{
+    outline:none;
+}
+
+button{
+    width:150px;
+    background-color:black;
+    outline:grey;
+    border:0.3px solid grey;
+    color:#33BDFF;
+    font-family:Rajdhani;
+    text-align:center;
+    height:50px;
+    font-size:20px;
+    transition:1s;
+}
+
+button:active{
+    background-color:purple;
+    border-radius:50px;
+    user-select:none;
+}
+
+********************************************************************************************************************
+window.onload=()=>{swal("The layout was 100% React and the styles 100% CSS. No HTML")}
+
+//</script><script type="text/babel">
+const {Component} = React;
+
+
+
+
+class Field extends Component{
+    
+    constructor(props){
+        super(props)
+    }
+    
+    
+    render(){
+    
+        return (
+        
+        <div>
+            <center>
+        
+            
+                <input type={this.props.types} placeholder={this.props.info}/>
+                
+            </center>
+            
+        </div>
+        )
+        
+    }
+    
+}
+
+
+
+class App extends Component{
+    
+    render(){
+        
+        return (
+            
+            <div>
+            
+                <h1 className="header">
+                    React Login Field
+                </h1>
+                
+                <hr />
+                
+                
+                <center>
+                    <img src="https://static.viget.com/react-logo-wide.png?mtime=20160411121644" />
+                </center>
+                
+                <hr />
+                
+                <h1 className="header">
+                    Make an account
+                </h1>
+                
+                <hr />
+                
+                <br />
+                <br />
+                <br />
+                
+                <div className="Field_container">
+                
+                    <Field types="input" info="email/telo" required="true"/>
+                    
+                    <Field types="password" info="Make a password" />
+                    
+                    <Field types="password" info="Re-enter password (Last check!)" />
+                    
+                    <Field types="text" info="Nickname" />
+                    <center>
+                    
+                    <br />
+                    <hr />
+                    
+                    <button>Done!</button>
+                    </center>
+                    
+                    <br />
+                    <hr />
+                    
+                
+                </div>
+            
+            </div>
+            
+        )
+        
+    }
+}
+
+ReactDOM.render(
+    
+    <App />,
+    document.querySelector("#root")
+    
+)
